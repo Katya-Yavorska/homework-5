@@ -80,6 +80,18 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--accent-color);
+  position: relative;
+}
+
+.link-current.current::after {
+content: "";
+width: 100%;
+position: absolute;
+height: 4px;
+border-radius: 2px;
+background-color: var(--accent-color);
+display: block;
+bottom: -32px;
 }
 
 .hero, .footer {
@@ -550,6 +562,47 @@ line-height: calc(16px / 14px);
 letter-spacing: 3%;
 color: var(--header-text-color);
 margin-bottom: 20px;
+}
+
+/* ---------------------------------------Modalka--------------------------------------------------------- */
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color:rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top:0;
+  transition: opacity 500ms linear, visibility 500ms linear;
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  min-height: 581px;
+  background-color: var(--header-text-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-btn {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  background-color:transparent;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ---------------------------------------Portfolio--------------------------------------------------------- */
